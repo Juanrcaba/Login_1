@@ -1,0 +1,28 @@
+<div class="container-sm w-100 h-100 d-flex justify-content-center align-items-center ">
+    <mat-card class="w-75 shadow-lg d-flex justify-content-center">
+        <div class="row d-flex">
+            <div class="col-7 logo ">
+               <img src="../../../assets/img/logo.jpg" alt="" srcset="" class="">
+            </div>
+            <div class="col-5 d-flex flex-column align-items-center p-3">
+               <h2 class="header"><span>Login</span> your account</h2>
+
+               <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>User Name</mat-label>
+                    <input type="email" matInput placeholder="Ex. example@example.com" value="" formControlName="userName" required>
+                  </mat-form-field>
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>User Password</mat-label>
+                    <input type="password" matInput placeholder="Password" value="" formControlName="userPassword" required>
+                  </mat-form-field>
+                  <p><a href="#" class="forgot">Forgot password?</a></p>
+                  <button mat-flat-button color="primary" [disabled]="!loginForm.valid" class="w-100">Login</button>
+               </form>
+               <h2 class="footer"><a href=""><span>Create</span> your account</a></h2>
+              
+            </div>
+          </div>
+    </mat-card>
+  
+ </div>
