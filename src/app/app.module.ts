@@ -22,10 +22,7 @@ import {AngularFireDatabaseModule} from '@angular/fire/compat/database';
     AppRoutingModule,
     BrowserAnimationsModule,
     AuthModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    // provideFirebaseApp(() => initializeApp(environment.firebase)),
-    // provideAuth(() => getAuth()),
-    // provideDatabase(() => getDatabase())
+    AngularFireModule.initializeApp(environment.firebase),    
     AngularFireDatabaseModule
   ],
   providers: [],

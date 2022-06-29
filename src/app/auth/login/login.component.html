@@ -15,10 +15,10 @@
                 <mat-label>Enter Password</mat-label>
                 <input type="password" matInput placeholder="Password" value="" formControlName="userPassword" required>
             </mat-form-field>          
-              <p><a href="/forgot">Forgot your password?</a></p>
+              <p><a routerLink="/forgot">Forgot your password?</a></p>
               <button mat-flat-button color="primary" [disabled]="!loginForm.valid" class="w-100" >Register</button>
            </form>
-           <h2 class="footer"><a href="/register"><span>Create</span> a new account</a></h2>
+           <h2 class="footer"><a routerLink="/register" ><span>Create</span> a new account</a></h2>
         </div>
     
    </mat-card>

@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-forgot',
@@ -10,18 +10,16 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class ForgotComponent implements OnInit {
  
   loginForm = new FormGroup({
-    userName : new FormControl('')
+    userName : new FormControl('',Validators.email)
   });
 
   constructor() {
-  
   }
-  ngOnInit(): void {
-    
+
+  ngOnInit(): void {    
   }
 
   onSubmit(){
-
   } 
 
   }
