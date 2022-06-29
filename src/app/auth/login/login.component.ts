@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -16,8 +17,10 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // this.db.object('users').valueChanges().subscribe((data:any) =>{
+    //  console.log(`Hola ${data[0].nombre} tu correo es ${data[0].Correo}`)
+    // })
   }
-
   onSubmit(){
     console.warn(this.loginForm.value);
   }

@@ -7,8 +7,11 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
-const modules = [ReactiveFormsModule,MatInputModule,MatIconModule,MatCardModule,MatButtonModule];
+const modules = [ReactiveFormsModule,MatInputModule,MatIconModule,MatCardModule,MatButtonModule,MatToolbarModule,MatSidenavModule,MatListModule];
 
 
 @NgModule({

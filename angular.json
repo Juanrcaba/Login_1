@@ -102,6 +102,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "Login_1:build:production",
+            "firebaseProject": "usercontrol-bootcampangular",
+            "firebaseHostingSite": "usercontrol-bootcampangular"
+          }
         }
       }
     }

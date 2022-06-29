@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "usercontrol-bootcampangular": {
+      "hosting": {
+        "Login_1": [
+          "usercontrol-bootcampangular"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "usercontrol-bootcampangular"
+  }
+}
