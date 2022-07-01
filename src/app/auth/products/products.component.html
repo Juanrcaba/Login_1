@@ -1,0 +1,22 @@
+<div class="container-fluid d-flex flex-column p-3">
+    <button mat-raised-button color="primary" [disabled]="Loading" (click)="openModal()" class="m-1  btn btn-md" style="width: 110px;" >New Product</button>
+    <button mat-raised-button color="warn" (click)="onLogOut()" class="m-1  btn btn-md" style="width: 110px;">LogOut</button>
+    <div class="table-responsive-md">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th *ngFor="let pColumn of displayedColumns">{{pColumn}}</th>                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of dataSource">
+                    <td>{{p.id}}</td>
+                    <td>{{p.pName}}</td>
+                    <td>{{p.pQty}}</td>
+                    <td>{{p.pPrice}}</td>
+                    <td>{{p.pCategory}}</td>                  
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

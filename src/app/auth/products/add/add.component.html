@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <form [formGroup]="addForm" (ngSubmit)="onSendData()" novalidate class="form" >
+        <mat-form-field  appearance="outline" class="w-25">
+            <mat-label>ID</mat-label>
+            <input matInput disabled value="">
+        </mat-form-field>
+        <mat-form-field  appearance="outline" class="w-100">
+            <mat-label>Product Name</mat-label>
+            <input type="text" matInput  value="" placeholder="Product Name" formControlName="pName" required>
+        </mat-form-field>
+        <mat-form-field  appearance="outline" class="w-100">
+            <mat-label>Qty</mat-label>
+            <input type="text" matInput  value="" placeholder="Qty" formControlName="pQty" required>
+        </mat-form-field>
+        <mat-form-field  appearance="outline" class="w-100">
+            <mat-label>Price</mat-label>
+            <input type="text" matInput  value="" placeholder="Price" formControlName="pPrice" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Select</mat-label>
+            <mat-select formControlName="pCategory" required >
+              <mat-option *ngFor="let c of categories" value="{{c}}" >{{c}}</mat-option>              
+            </mat-select>
+          </mat-form-field>
+          <button mat-raised-button color="primary"  class="m-1  btn btn-md" style="width: 110px;" [disabled]="!addForm.valid" >New Product</button>
+       </form>
+</div>

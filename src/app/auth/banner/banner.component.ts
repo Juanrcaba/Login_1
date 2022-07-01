@@ -16,16 +16,25 @@ export class BannerComponent implements OnInit {
   constructor(private ruta: ActivatedRoute,private authService:AuthService,private route:Router) { }
   
   ngOnInit(): void {
-
-    this.userData ={
-      email: this.ruta.snapshot.params['userEmail'],
-      userName: this.ruta.snapshot.params['userName']
-      }
+    this.logged();
+   
   }
 
   onLogOut(){
     this.authService.logOut();
-    this.route.navigate([`/`]);
-   
+    this.route.navigate([`/`]);   
+  }
+  
+  logged(){
+    this.authService.getUserLogged().subscribe(res=>{
+      if(res?.email == undefined)
+      this.route.navigate([`/`]);
+      else{
+        this.userData ={
+          email: this.ruta.snapshot.params['userEmail'],
+          userName: this.ruta.snapshot.params['userName']
+          }
+      }
+    }) 
   }
 }

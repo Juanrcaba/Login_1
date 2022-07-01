@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Observable } from 'rxjs';
-import { users } from './auth/Models/users.model';
+import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { ProductsComponent } from './auth/products/products.component';
+import { IProduct } from './Models/product.interface';
+import { ApiService } from './service/api/api.service';
 
 @Component({
   selector: 'app-root',
@@ -13,23 +12,12 @@ import { users } from './auth/Models/users.model';
 export class AppComponent {
   title = 'Login_1';
 
-  items? : any;
+  items? : IProduct[];
 
-  constructor(firestore: AngularFirestore,private db:AngularFireDatabase){
-    // firestore.collection('users').valueChanges().subscribe(res => {
-    //   console.log(res);
-    // });
+  constructor(){ }
 
-  
-    // db.list('/users', ref => ref.orderByChild("Correo").equalTo("Juanrscaba@gmail.com")).valueChanges().subscribe(res =>{
-    //   this.items = res;
-    //   console.log(this.items);
-    // });
-
-    // db.list('users').valueChanges().subscribe(res => {
-    //   console.log(res);
-    // });
-
-   
+  ngOnInit(): void {
+    
   }
+
 }

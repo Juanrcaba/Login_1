@@ -13,6 +13,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
 
 
 //firebase
@@ -23,7 +26,10 @@ import { environment } from 'src/environments/environment';
 const modules = [ReactiveFormsModule,MatInputModule,MatIconModule,MatCardModule,MatButtonModule,MatToolbarModule,MatSidenavModule,MatListModule,
 AngularFireModule.initializeApp(environment.firebase),
 AngularFireDatabaseModule,
-MatSnackBarModule];
+MatSnackBarModule,
+MatTableModule,
+MatDialogModule,
+MatSelectModule];
 
 
 @NgModule({

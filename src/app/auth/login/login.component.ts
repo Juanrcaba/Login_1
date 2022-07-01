@@ -46,7 +46,8 @@ export class LoginComponent implements OnInit {
   logged(){
     this.authService.getUserLogged().subscribe(res=>{
       if(res?.email != undefined)
-      this.route.navigate([`/banner/${res?.email}/${res?.displayName}`]);
+      this.route.navigate([`/products`]);
+      // this.route.navigate([`/banner/${res?.email}/${res?.displayName}`]);
     }) 
   }
 
