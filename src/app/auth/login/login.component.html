@@ -6,7 +6,7 @@
         <div class="form-container col-md-5">
             <h2 class="header"><span>Login</span> your account</h2>
 
-           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate class="form" >
+           <form [formGroup]="loginForm" (ngSubmit)="onLogin()" novalidate class="form" >
             <mat-form-field  appearance="outline" class="w-100">
                 <mat-label>User Name</mat-label>
                 <input type="email" matInput placeholder="Ex. example@example.com" value="" formControlName="userName" required>
@@ -16,10 +16,16 @@
                 <input type="password" matInput placeholder="Password" value="" formControlName="userPassword" required>
             </mat-form-field>          
               <p><a routerLink="/forgot">Forgot your password?</a></p>
-              <button mat-flat-button color="primary" [disabled]="!loginForm.valid" class="w-100" >Register</button>
+              <button mat-flat-button color="primary" [disabled]="!loginForm.valid" class="w-100" >Sign In</button>
            </form>
+           <button mat-stroked-button color="" class="w-100 mb-3 d-flex justify-content-between mt-3" (click)="loginWithGoogle()" >
+            <img src="../../../assets/img/google.png" alt="" srcset="" style="width: 25px;">
+            <span class="ml-2">SignIn with Google</span>
+           </button>
+          
            <h2 class="footer"><a routerLink="/register" ><span>Create</span> a new account</a></h2>
         </div>
+       
     
    </mat-card>
   

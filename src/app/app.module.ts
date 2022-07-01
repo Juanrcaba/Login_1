@@ -11,11 +11,13 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { AngularFireModule } from '@angular/fire/compat';
 import {AngularFireDatabaseModule} from '@angular/fire/compat/database';
+import { AlertComponent } from './alert/alert.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -27,5 +29,6 @@ import {AngularFireDatabaseModule} from '@angular/fire/compat/database';
   ],
   providers: [],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }

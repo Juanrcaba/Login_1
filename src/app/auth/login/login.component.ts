@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
+
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -9,20 +12,42 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
+
+  
   loginForm = new FormGroup({
     userName : new FormControl(''),
     userPassword: new FormControl('')
 
   });
-  constructor() { }
+
+  constructor(private authService: AuthService, private route:Router) { }
 
   ngOnInit(): void {
-    // this.db.object('users').valueChanges().subscribe((data:any) =>{
-    //  console.log(`Hola ${data[0].nombre} tu correo es ${data[0].Correo}`)
-    // })
+    this.logged();
   }
-  onSubmit(){
-    console.warn(this.loginForm.value);
+
+
+  onSubmit(){}
+
+  onLogin(){
+    this.authService.login(`${this.loginForm.value.userName}`, `${this.loginForm.value.userPassword}`)
+    .then((res: any)=>{
+      this.route.navigate([`/banner/${res?.email}/${res?.displayName}`]);
+     
+    });
+  }
+
+  loginWithGoogle(){
+    this.authService.loginWithGoogle(`${this.loginForm.value.userName}`, `${this.loginForm.value.userPassword}`).then(res =>{
+    this.route.navigate([`/banner/${res?.user?.email}/${res?.user?.displayName}`]);
+    },err=> console.log(err.message));
+  }
+
+  logged(){
+    this.authService.getUserLogged().subscribe(res=>{
+      if(res?.email != undefined)
+      this.route.navigate([`/banner/${res?.email}/${res?.displayName}`]);
+    }) 
   }
 
 }
