@@ -9,7 +9,7 @@ import { ProductsModule } from 'src/app/auth/products/products.module';
 })
 export class ApiService {
 
-  url = "http://localhost:5211/";
+  url = "http://myloginapp.ddns.net:8080/";
   constructor(private http : HttpClient) { }
 
   onGetProducts():Observable<IProduct[]>{
